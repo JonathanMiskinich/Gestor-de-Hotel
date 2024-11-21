@@ -21,8 +21,18 @@ public partial class Habitacione
 
     public virtual Tipohabitacion? TipoNavigation { get; private set; }
 
+    public Habitacione() {}
+    public Habitacione(int Numero, int tipoID, decimal precioPorNoche, int estadoID, Estadohabitacion Estado, Tipohabitacion Tipo)
+    {
+        this.Numero = Numero;
+        this.Tipo = tipoID;
+        this.PRECIO_POR_NOCHE = precioPorNoche;
+        this.Estado = estadoID;
+        EstadoNavigation = Estado;
+        TipoNavigation = Tipo;
+    }
     public decimal PRECIO_POR_NOCHE
-{
+    {
     get => PrecioPorNoche;
     set
     {

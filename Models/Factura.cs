@@ -15,10 +15,20 @@ public partial class Factura
 
     public DateOnly FechaEmision { get; private set; }
 
-    public virtual Cliente? IdClienteNavigation { get; private set; }
+    public virtual Cliente? ClienteNavigation { get; private set; }
 
-    public virtual Reserva? IdReservaNavigation { get; private set; }
+    public virtual Reserva? ReservaNavigation { get; private set; }
 
+    public Factura() {}
+    public Factura(int IdCliente, int IdReserva, decimal MontoTotal, Cliente cliente, Reserva reserva) 
+    {
+        this.IdCliente = IdCliente;
+        this.IdReserva = IdReserva;
+        this.MONTO_TOTAL = MontoTotal;
+        this.ClienteNavigation = cliente;
+        this.FechaEmision = DateOnly.FromDateTime(DateTime.Now);
+        this.ReservaNavigation = reserva;
+    }
     public decimal MONTO_TOTAL
     {
         get => this.MontoTotal;

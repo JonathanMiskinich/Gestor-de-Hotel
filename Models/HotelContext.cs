@@ -106,11 +106,11 @@ public partial class HotelContext : DbContext
             entity.Property(e => e.IdReserva).HasColumnName("idReserva");
             entity.Property(e => e.MONTO_TOTAL).HasPrecision(10, 2);
 
-            entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Facturas)
+            entity.HasOne(d => d.ClienteNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdCliente)
                 .HasConstraintName("factura_ibfk_1");
 
-            entity.HasOne(d => d.IdReservaNavigation).WithMany(p => p.Facturas)
+            entity.HasOne(d => d.ReservaNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdReserva)
                 .HasConstraintName("factura_ibfk_2");
         });

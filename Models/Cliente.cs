@@ -16,12 +16,32 @@ public partial class Cliente
 
     private string? Email;
 
-    public int Dni { get; private set;}
+    public int Dni;
 
     public virtual ICollection<Factura> Facturas { get; private set; } = new List<Factura>();
 
     public virtual ICollection<Reserva> Reservas { get; private set; } = new List<Reserva>();
 
+    public Cliente() {}
+    public Cliente(string nombre, string apellido, string telefono, string email, int dni)
+    {
+        this.NOMBRE = nombre;
+        this.APELLIDO = apellido;
+        this.Telefono = telefono;
+        this.EMAIL = email;
+        this.DNI = dni;
+    }
+
+    public int DNI
+    {
+        get => this.Dni;
+        set
+        {
+            if(value < 0)
+                throw new Exception("Valor de Dni invalido.");
+            Dni = value;
+        }
+    }
     public string NOMBRE
     {
         get => this.Nombre;
@@ -32,6 +52,7 @@ public partial class Cliente
             Nombre = value;
         }
     }
+
 
     public string APELLIDO
     {
