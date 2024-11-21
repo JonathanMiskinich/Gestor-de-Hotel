@@ -78,4 +78,26 @@ public partial class Cliente
             this.Email = value;
         }
     }
+
+    public void AgregarFactura(Factura factura)
+    {
+        this.Facturas.Add(factura);
+    }
+
+    public void EliminarFactura(Factura factura)
+    {
+        if(Facturas.Contains(factura))
+            this.Facturas.Remove(factura);
+    }
+
+    public void AgregarReserva(Reserva reserva)
+    {
+        this.Reservas.Add(reserva);
+    }
+
+    public void EliminarReserva(Reserva reserva)
+    {
+        if(Reservas.Contains(reserva))
+            this.Reservas.Remove(reserva);
+    }
 }

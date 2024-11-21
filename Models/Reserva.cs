@@ -37,4 +37,15 @@ public partial class Reserva
         this.EstadoReservaNavigation = estado;
         HabitacionNavigation = habitacion;
     }
+
+    public void AgregarFactura(Factura factura)
+    {
+        this.Facturas.Add(factura);
+    }
+
+    public void EliminarFactura(Factura factura)
+    {
+        if(Facturas.Contains(factura))
+            this.Facturas.Remove(factura);
+    }
 }

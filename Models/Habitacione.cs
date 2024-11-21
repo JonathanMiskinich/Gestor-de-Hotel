@@ -33,12 +33,24 @@ public partial class Habitacione
     }
     public decimal PRECIO_POR_NOCHE
     {
-    get => PrecioPorNoche;
-    set
-    {
-        if (value < 0)
-            throw new ArgumentException("El precio por noche no puede ser negativo.");
-        PrecioPorNoche = value;
+        get => PrecioPorNoche;
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("El precio por noche no puede ser negativo.");
+            PrecioPorNoche = value;
+        }
     }
-}
+
+    public void AgregarReserva(Reserva reserva)
+    {
+        this.Reservas.Add(reserva);
+    }
+
+    public void EliminarReserva(Reserva reserva)
+    {
+        if(Reservas.Contains(reserva))
+            this.Reservas.Remove(reserva);
+    }
+
 }
