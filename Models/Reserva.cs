@@ -5,23 +5,23 @@ namespace Administracion_hotel.Models;
 
 public partial class Reserva
 {
-    public int Id { get; set; }
+    public int Id { get; private set; }
 
-    public int? IdCliente { get; set; }
+    public int? IdCliente { get; private set; }
 
-    public int? IdHabitacion { get; set; }
+    public int? IdHabitacion { get; private set; }
 
-    public DateOnly FechaInicio { get; set; }
+    public DateOnly FechaInicio { get; private set; }
 
     public DateOnly FechaFinalizacion { get; set; }
 
     public int? IdEstadoReserva { get; set; }
 
-    public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
+    public virtual ICollection<Factura> Facturas { get; private set; } = new List<Factura>();
 
-    public virtual Cliente? IdClienteNavigation { get; set; }
+    public virtual Cliente? IdClienteNavigation { get; private set; }
 
-    public virtual EstadoReserva? IdEstadoReservaNavigation { get; set; }
+    public virtual EstadoReserva? IdEstadoReservaNavigation { get; private set; }
 
-    public virtual Habitacione? IdHabitacionNavigation { get; set; }
+    public virtual Habitacione? IdHabitacionNavigation { get; private set; }
 }

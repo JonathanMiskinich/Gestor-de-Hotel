@@ -117,3 +117,4 @@ D:\Proyectos\Administracion hotel\obj\Debug\net8.0\refint\Administracion hotel.d
 D:\Proyectos\Administracion hotel\obj\Debug\net8.0\Administracion hotel.pdb
 D:\Proyectos\Administracion hotel\obj\Debug\net8.0\Administracion hotel.genruntimeconfig.cache
 D:\Proyectos\Administracion hotel\obj\Debug\net8.0\ref\Administracion hotel.dll
+D:\Proyectos\Administracion hotel\obj\Debug\net8.0\Administracion hotel.sourcelink.json

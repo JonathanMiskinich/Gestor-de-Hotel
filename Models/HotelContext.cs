@@ -47,14 +47,14 @@ public partial class HotelContext : DbContext
             entity.ToTable("clientes");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Apellido)
+            entity.Property(e => e.APELLIDO)
                 .HasMaxLength(50)
                 .HasColumnName("apellido");
             entity.Property(e => e.Dni).HasColumnName("dni");
-            entity.Property(e => e.Email)
+            entity.Property(e => e.EMAIL)
                 .HasMaxLength(50)
                 .HasColumnName("email");
-            entity.Property(e => e.Nombre)
+            entity.Property(e => e.NOMBRE)
                 .HasMaxLength(50)
                 .HasColumnName("nombre");
             entity.Property(e => e.Telefono)
@@ -104,7 +104,7 @@ public partial class HotelContext : DbContext
             entity.Property(e => e.FechaEmision).HasColumnName("fechaEmision");
             entity.Property(e => e.IdCliente).HasColumnName("idCliente");
             entity.Property(e => e.IdReserva).HasColumnName("idReserva");
-            entity.Property(e => e.MontoTotal).HasPrecision(10, 2);
+            entity.Property(e => e.MONTO_TOTAL).HasPrecision(10, 2);
 
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdCliente)
@@ -130,7 +130,7 @@ public partial class HotelContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.Numero).HasColumnName("numero");
-            entity.Property(e => e.PrecioPorNoche)
+            entity.Property(e => e.PRECIO_POR_NOCHE)
                 .HasPrecision(10, 2)
                 .HasColumnName("precioPorNoche");
             entity.Property(e => e.Tipo).HasColumnName("tipo");
